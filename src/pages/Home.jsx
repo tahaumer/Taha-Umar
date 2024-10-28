@@ -173,7 +173,7 @@ const Home = () => {
           <div className='text-[150px] pl-10  text-white font-roman leading-tight whitespace-nowrap col-span-2'>
             <motion.div viewport={{ once: true }}  initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut", delay: 1 }} ><Link to="/about" className='hover:tracking-widest transition-all duration-300'>ABOUT</Link></motion.div>
             <motion.div viewport={{ once: true }}  initial={{ opacity: 0, x: 25 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut", delay: 1 }} ><h2 className='hover:tracking-widest transition-all duration-300'>Projects</h2></motion.div>
-            <motion.div viewport={{ once: true }}  initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut", delay: 1 }} ><h2 className='hover:tracking-widest transition-all duration-300'>Contact</h2></motion.div>
+            <motion.div viewport={{ once: true }}  initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeInOut", delay: 1 }} ><Link to="/contact-me" className='hover:tracking-widest transition-all duration-300'>Contact</Link></motion.div>
           </div>
         </div>
       </div>
