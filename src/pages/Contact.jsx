@@ -105,7 +105,7 @@ const Contact = () => {
                                                 />
                                                 <label
                                                     htmlFor="username"
-                                                    className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('username') ? 'text-xs -top-4 text-[#5a6a88]' : 'text-white'}`}>
+                                                    className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('username') ? 'text-xs -top-5 text-[#5a6a88]' : 'text-white'}`}>
                                                     Name
                                                 </label>
                                             </div>
@@ -122,7 +122,7 @@ const Contact = () => {
                                                 />
                                                 <label
                                                     htmlFor="email"
-                                                    className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('email') ? 'text-xs -top-4 text-[#5a6a88]' : 'text-white'}`}>
+                                                    className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('email') ? 'text-xs -top-5 text-[#5a6a88]' : 'text-white'}`}>
                                                     Email
                                                 </label>
                                             </div>
@@ -140,7 +140,7 @@ const Contact = () => {
                                             />
                                             <label
                                                 htmlFor="subject"
-                                                className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('subject') ? 'text-xs -top-4 text-[#5a6a88]' : 'text-white'}`}>
+                                                className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('subject') ? 'text-xs -top-5 text-[#5a6a88]' : 'text-white'}`}>
                                                 Subject
                                             </label>
                                         </div>
@@ -156,7 +156,7 @@ const Contact = () => {
                                             ></textarea>
                                             <label
                                                 htmlFor="message"
-                                                className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('message') ? 'text-xs -top-4 text-[#5a6a88]' : 'text-white'}`}>
+                                                className={`absolute left-0 top-1 cursor-text transition-all ${isFilled('message') ? 'text-xs -top-5 text-[#5a6a88]' : 'text-white'}`}>
                                                 Message
                                             </label>
                                         </div>
