@@ -1,19 +1,13 @@
 import { motion, useIsPresent } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
 import { Link } from 'react-router-dom';
 import '../App.css'
 import { TypeAnimation } from 'react-type-animation';
-import Button from '../componenta/Button';
+import Button from '../component/Button';
 import myImage from '../assets/images/taha.png'
+import AnimatedHeader from '../component/AnimatedHeader';
+import Footer from '../component/Footer';
 
-const fadeInFromLeft = {
-  hidden: { opacity: 0, x: -100 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.5, ease: 'easeInOut', delay: 0.5 }
-  }
-};
 const fadeInFromRight = {
   hidden: { opacity: 0, x: 30 },
   visible: {
@@ -25,25 +19,62 @@ const fadeInFromRight = {
 
 const About = () => {
   const isPresent = useIsPresent();
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  const [xOffset, setXOffset] = useState(getXOffset());
+  const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const handleResize = () => {
+      setXOffset(getXOffset());
+      setXOffsetDelay(getXOffsetDelay());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Declare functions above their first usage
+  function getXOffset() {
+    return window.innerWidth < 700 ? -10 : -100;
+  }
+
+  function getXOffsetDelay() {
+    return window.innerWidth < 700 ? 1 : 1.5;
+  }
+
+  const fadeInFromLeft = {
+    hidden: { opacity: 0, x: xOffset },
+    visible: { opacity: 1, x: 0 },
+  };
   return (
     <>
-      <div className='container pl-20'>
-        <div className='fixed left-0 h-screen py-20'>
-          <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} viewport={{ once: true }} className='flex flex-col justify-between h-full text-white font-firaCode py-5 font-extralight'>
-            <Link to='/' className='w-fit -rotate-90 hover:line-through ml-3 tracking-[0.2em]'>Home</Link>
-            <span className='w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90'></span>
-            <p className='w-fit -rotate-90 -ml-5'>© TAHA | 2024</p>
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1224px] xl:max-w-[1380px] 2xl:max-w-[1536px] md:pl-20 pl-14 mx-auto">
+        <div className='fixed left-0 h-screen pt-20'>
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInFromLeft}
+            transition={{ delay: xOffsetDelay, duration: 1 }}
+            className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight"
+          >
+            <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
+            <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
+            <p className="w-fit -rotate-90 -ml-5 whitespace-nowrap">© TAHA | 2024</p>
           </motion.div>
         </div>
-        <div className='flex p-20 space-x-10'>
-          <div className='w-[60%] z-10 relative'>
-            <motion.h1 viewport={{ once: true }} initial={{ opacity: 1, y: 200 }} animate={{ opacity: 1 , y: 0 }} transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }} className='text-[170px] text-white font-roman leading-[0.8] mb-10'>About
-              <motion.span viewport={{ once: true }} initial={{width:0 }} animate={{ width: 400 }} transition={{ duration: 0.8, ease: "easeInOut", delay: 1.5 }} className='h-[0.5px] bg-white block mb-2'></motion.span>
-              <motion.span viewport={{ once: true }} initial={{width:0 }} animate={{ width: 300 }} transition={{ duration: 1, ease: "easeInOut", delay: 1.5 }} className='h-[0.5px] bg-white block'></motion.span>
-            </motion.h1>
-            <div className='bg-primary relative z-10'>
-              <div className="text-white text-[50px] font-roman leading-none">
+        <div className='flex py-10 xl:p-20 pb-0 space-x-10'>
+          <div className='lg:w-[60%] z-10 relative'>
+            <AnimatedHeader 
+              title="About"
+              initialY={200} 
+              spanWidths={[400, 300]} 
+              delay={0.5} 
+            />
+            <div className='bg-primary relative pr-3 z-10'>
+              <div className="text-white xl:text-[50px] sm:text-[30px] text-lg font-roman leading-none">
                 <TypeAnimation
                   sequence={[
                     `I'm Taha. A Developer`,
@@ -57,27 +88,32 @@ const About = () => {
                   speed={50}
                   repeat={Infinity}
                 />
+              <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" variants={fadeInFromRight} className='lg:hidden block w-[200px] md:w-[384px] h-fit shadow-custom mt-7'>
+                <img src={myImage} alt="" className='object-contain object-center' />
+              </motion.div>
               </div>
-              <p className='my-8 text-white font-openSans font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eveniet alias dolorum explicabo quia, aperiam quaerat nam odit voluptatum ipsa molestiae iste accusantium quos cum distinctio? Sunt ipsam exercitationem in?</p>
-              <p className='my-8 text-white font-openSans font-thin'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro, consectetur maxime, deleniti eum, impedit repellendus quam omnis placeat perspiciatis fugit animi? Dolores porro accusamus eaque nihil ex ipsa aliquam!</p>
-              <p className='my-8 text-white font-openSans font-thin'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatibus nam veritatis laborum repellat modi, inventore omnis dolor sapiente, minima quae dolorem exercitationem dolores dolore, non vero itaque doloremque tempore Lorem ipsum dolor sit amet consectetur adipisicing elit. In ratione, pariatur voluptate, temporibus vitae at similique sint, aut eligendi totam consequuntur soluta itaque expedita a doloribus rerum ullam illum atque.</p>
-              <p className='my-8 text-white font-openSans font-thin'>This is one of my favourite quotes (by Peter Drucker):</p>
-              <h3 className='text-white text-[50px] border-l pl-5 font-roman'>“There is nothing so useless as doing efficiently that which should not be done at all.”</h3>
-              <p className='my-12 text-white font-roman text-3xl font-thin'>Experience</p>
-              <p className='my-8 text-white font-openSans font-thin'>- Degree in Brand Communications <br />
-                - 15 years experience in Digital Design, Web Development, Advertising and Product Development
+              <p className='my-8 pr-3 text-white font-openSans font-thin'>A passionate Front-End Developer with a solid 2 years of professional experience, blending creativity with code to craft engaging, responsive, and user-centric web applications.</p>
+              <p className='sm:mt-12 mt-3 text-white font-roman text-3xl font-thin'>Who Am I?</p>
+              <p className='mb-8 mt-4 pr-3 text-white font-openSans font-thin'>I thrive on bringing ideas to life through interactive and modern web experiences. With strong expertise in React.js, Next.js, and PHP Laravel, I build powerful, efficient, and scalable applications. My skill set extends to HTML, CSS, and JavaScript, complemented by a deep understanding of Tailwind CSS for streamlined and adaptive styling.</p>
+              <p className='sm:mt-12 mt-3 text-white font-roman text-3xl font-thin'>What Drives Me?</p>
+              <p className='mb-8 mt-4 pr-3 text-white font-openSans font-thin'>My love for problem-solving and continuous learning fuels my passion for development. I find joy in tackling complex projects, collaborating with teams, and crafting solutions that not only meet technical standards but provide an exceptional user experience.</p>
+              <h3 className='text-white lg:text-[50px] sm:text-[30px] text-lg pr-3 leading-tight text-pretty border-l pl-5 font-roman'>“There is nothing so useless as doing efficiently that which should not be done at all.”</h3>
+              <p className='sm:mt-12 mt-5 text-white font-roman text-3xl font-thin'>Experience</p>
+              <p className='mb-8 mt-4 text-white pr-3 font-openSans font-thin'>- Degree in Computer Science. <br />
+                - 2 years experience in Web Development.
               </p>
-              <p className='my-12 text-white font-roman text-3xl font-thin'>Skills</p>
-              <p className='my-8 text-white font-openSans font-thin'>
-                UI/UX Design / Strategy / Product Management / User Research / Agile Methodologies / Collaboration / Design Sprints / Design Systems / HTML and CSS / CMS Design & Architecture / Webflow Development / Framer Development / Photography / Graphic Design
+              <p className='sm:mt-12 mt-3 text-white font-roman text-3xl font-thin'>Skills</p>
+              <p className='mb-8 mt-4 pr-3 text-white font-openSans font-thin'>
+              Front-End Development / React.js / Next.js / Back-End Development / PHP Laravel / Styling & Animations / Tailwind CSS / Framer Motion / Full-Stack Solutions / MongoDB / MySQL (phpMyAdmin) / Web Technologies / HTML and CSS / JavaScript / Responsive Design / Web App Optimization / Version Control / Git / Collaborative Development / API Integration
               </p>
-              <Button text="My CV" icon />
+                <Button text="My CV" icon downloadUrl="/Taha Umar CV.pdf" />
             </div>
           </div>
-          <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" variants={fadeInFromRight} className='w-[384px] h-fit shadow-custom'>
+          <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" variants={fadeInFromRight} className='hidden lg:block w-[384px] h-fit shadow-custom'>
             <img src={myImage} alt="" className='object-contain object-center' />
           </motion.div>
         </div>
+            <Footer/>
       </div>
       <motion.div
         initial={{ scaleX: 1 }}

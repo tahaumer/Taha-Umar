@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import Button from '../componenta/Button'
+import Button from '../component/Button'
 import facebook from '../assets/icons/facebook.svg'
 import instagram from '../assets/icons/instagram.svg'
 import linkdin from '../assets/icons/linkdin.svg'
-import ExploreBtn from '../componenta/ExploreBtn'
-import Navbar from '../componenta/Navbar';
+import ExploreBtn from '../component/ExploreBtn'
+import Navbar from '../component/Navbar';
 import { motion, useIsPresent } from "framer-motion";
 import { Link } from 'react-router-dom';
 
@@ -169,10 +169,10 @@ const Home = () => {
         <ExploreBtn />
       </motion.div>
       <div className='container flex py-20' id='explore'>
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ delay: getXOffsetDelay(), duration: 1}} className='flex w-[61px] lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight'>
+        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ delay: getXOffsetDelay(), duration: 1}} className='flex w-[61px] -ml-5 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight'>
           <p className='w-fit -rotate-90'>Explore</p>
           <span className='w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90'></span>
-          <p className='w-fit -rotate-90 -ml-5 whitespace-nowrap'>© TAHA | 2024</p>
+          <p className='w-fit -rotate-90 sm:-ml-5 -ml-8 whitespace-nowrap'>© TAHA | 2024</p>
         </motion.div>
         <div className='w-full lg:flex'>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer2} className=' lg:h-full text-neutral1 lg:flex items-start flex-col justify-end font-firaCode leading-6 text-pretty pb-10' >
