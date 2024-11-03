@@ -57,7 +57,7 @@ const projectList = [
   },
   {
     title: "Practice - 2",
-    link: "https://musafir-pied.vercel.app/",
+    link: "https://musafir-pakistan.vercel.app/",
     img: musafirImg,
     textColor: "#9DE793",
     name: "Musafir"
