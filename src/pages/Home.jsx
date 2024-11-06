@@ -114,7 +114,7 @@ const Home = () => {
         <div className='flex items-center justify-between font-openSans font-medium lg:text-base text-sm'>
           <motion.div className='pr-3 hidden lg:block' initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.p className="text-neutral1 inline" variants={fadeInFromBottom}>
-              Hi, I'm <span className="text-secondary italic">Taha Umar</span>, a Web Developer with <span className="text-secondary italic">over three years</span>&nbsp;
+              Hi, I'm <span className="text-secondary italic">Taha Umar</span>, a Web Developer with <span className="text-secondary italic">over two years</span>&nbsp;
             </motion.p>
             <motion.p className="text-neutral1 inline" variants={fadeInFromBottom}>
               of experience in crafting responsive and user-friendly websites.&nbsp;

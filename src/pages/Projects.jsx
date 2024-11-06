@@ -5,7 +5,7 @@ import '../App.css';
 import zoaImg from '../assets/images/zoa.jpg';
 import sdsImg from '../assets/images/sds.png';
 import toolImg from '../assets/images/tool.png';
-import forexImg from '../assets/images/Forex-Source.jpg';
+import forexImg from '../assets/images/Forex-Source.png';
 import tryboostingImg from '../assets/images/tryboosting.png';
 import musafirImg from '../assets/images/musafir.png'
 import beatsImg from '../assets/images/beats.png'

@@ -92,7 +92,7 @@ const About = () => {
                 <img src={myImage} alt="" className='object-contain object-center' />
               </motion.div>
               </div>
-              <p className='my-8 pr-3 text-white font-openSans font-thin'>A passionate Front-End Developer with a solid 2 years of professional experience, blending creativity with code to craft engaging, responsive, and user-centric web applications.</p>
+              <p className='my-8 pr-3 text-white font-openSans font-thin'>A dedicated Front-End Developer with 2 years of solid experience, merging creativity and code to build dynamic, responsive, and user-focused web applications.</p>
               <p className='sm:mt-12 mt-3 text-white font-roman text-3xl font-thin'>Who Am I?</p>
               <p className='mb-8 mt-4 pr-3 text-white font-openSans font-thin'>I thrive on bringing ideas to life through interactive and modern web experiences. With strong expertise in React.js, Next.js, and PHP Laravel, I build powerful, efficient, and scalable applications. My skill set extends to HTML, CSS, and JavaScript, complemented by a deep understanding of Tailwind CSS for streamlined and adaptive styling.</p>
               <p className='sm:mt-12 mt-3 text-white font-roman text-3xl font-thin'>What Drives Me?</p>
