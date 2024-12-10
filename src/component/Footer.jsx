@@ -10,12 +10,12 @@ const Footer = () => {
       case '/about':
         return (
           <>
-            <Link to='/Projects' className='hover:line-through'>Projects</Link>
+            <Link to='/projects' className='hover:line-through'>Projects</Link>
             <div className='w-full mx-5 h-[1px] bg-white'></div>
             <Link to='/contact-me' className='hover:line-through'>Contact</Link>
           </>
         );
-      case '/Projects':
+      case '/projects':
         return (
           <>
             <Link to='/about' className='hover:line-through'>About</Link>
@@ -28,13 +28,13 @@ const Footer = () => {
           <>
             <Link to='/about' className='hover:line-through'>About</Link>
             <div className='w-full mx-5 h-[1px] bg-white'></div>
-            <Link to='/Projects' className='hover:line-through'>Projects</Link>
+            <Link to='/projects' className='hover:line-through'>Projects</Link>
           </>
         );
       default:
         return (
           <>
-            <Link to='/Projects' className='hover:line-through'>Projects</Link>
+            <Link to='/projects' className='hover:line-through'>Projects</Link>
             <div className='w-full mx-5 h-[1px] bg-white'></div>
             <Link to='/about' className='text-white'>About</Link>
             <div className='w-full mx-5 h-[1px] bg-white'></div>
