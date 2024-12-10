@@ -7,6 +7,8 @@ import sdsImg from '../assets/images/sds.png';
 import toolImg from '../assets/images/tool.png';
 import forexImg from '../assets/images/Forex-Source.png';
 import tryboostingImg from '../assets/images/tryboosting.png';
+import pngtotextImg from '../assets/images/pngtotext.png';
+import estorefoamImg from '../assets/images/estorefoam.png';
 import musafirImg from '../assets/images/musafir.png'
 import beatsImg from '../assets/images/beats.png'
 import AnimatedHeader from '../component/AnimatedHeader';
@@ -47,6 +49,20 @@ const projectList = [
     img: tryboostingImg,
     textColor: "#66FCF1",
     name: "Try Boosting"
+  },
+  {
+    title: "Image to Text Converter",
+    link: "https://pngtotext.com/",
+    img: pngtotextImg,
+    textColor: "#44b1e5",
+    name: "Png to Text"
+  },
+  {
+    title: "E-Commerce Store",
+    link: "https://estorefoam.co.uk/",
+    img: estorefoamImg,
+    textColor: "#fff",
+    name: "E-Store Foam"
   },
   {
     title: "Practice - 1",
