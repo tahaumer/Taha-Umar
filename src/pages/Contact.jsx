@@ -8,6 +8,7 @@ import phone from '../assets/icons/mail.svg'
 import bgImage from '../assets/images/bgp-white.svg';
 import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
+import BackgroundShapes2 from '../component/background2'
 
 const fadeInFromRight = {
     hidden: { opacity: 0, x: 30 },
@@ -85,6 +86,7 @@ const Contact = () => {
     return (
         <>
             <div className='container pl-10'>
+            <BackgroundShapes2 numberOfParticles='20' />
                 <div className='fixed left-0 h-screen py-20'>
                     <motion.div
                         initial="hidden"
@@ -95,7 +97,7 @@ const Contact = () => {
                     >
                         <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
                         <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
-                        <p className="w-fit -rotate-90 md:-ml-5 -ml-7 whitespace-nowrap">© TAHA | 2024</p>
+                        <p className="w-fit -rotate-90 md:-ml-5 -ml-7 whitespace-nowrap">© TAHA | 2025</p>
                     </motion.div>
                 </div>
                 <div className='flex py-10 xl:p-20 pb-0 space-x-10'>

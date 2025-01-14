@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Button from '../component/Button'
 import facebook from '../assets/icons/facebook.svg'
 import instagram from '../assets/icons/instagram.svg'
@@ -7,6 +6,7 @@ import ExploreBtn from '../component/ExploreBtn'
 import Navbar from '../component/Navbar';
 import { motion, useIsPresent } from "framer-motion";
 import { Link } from 'react-router-dom';
+import BackgroundShapes from '../component/Background'
 
 
 const staggerContainer = {
@@ -102,11 +102,12 @@ const Home = () => {
       <div className='absolute -top-36 -right-12 w-[200px] h-[200px] blur-[0.6px] border border-neutral2 rounded-full'></div>
       <motion.div initial={{ scaleX: 1 }} animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }} exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }} style={{ originX: isPresent ? 0 : 1 }} className="privacy-screen" />
       <div className="container h-[80vh] flex flex-col justify-center">
-        <motion.div initial="hidden" animate="visible" variants={fadeInFromTop} className='lg:hidden mb-6'>
-          <Button text='Projects' redirectUrl='/projects'/>
+        <BackgroundShapes />
+        <motion.div initial="hidden" animate="visible" variants={fadeInFromTop} className='lg:hidden mb-6 z-10 relative'>
+          <Button text='Projects' redirectUrl='/projects' />
         </motion.div>
         <div className='flex items-center justify-between'>
-          <h1 className='text-[10vw] 2xl:text-[150px] font-firaCode font-bold tracking-tighter text-secondary leading-none fade-in-left'>Full-stack</h1>
+          <h1 className='text-[10vw] z-10 relative 2xl:text-[150px] font-firaCode font-bold tracking-tighter text-secondary leading-none fade-in-left'>Full-stack</h1>
           <motion.div initial="hidden" animate="visible" variants={fadeInFromTop} className='hidden lg:block'>
             <Button text='Projects' redirectUrl="/projects" />
           </motion.div>
@@ -176,13 +177,14 @@ const Home = () => {
         </span>
         <ExploreBtn />
       </motion.div>
-      <div className='container flex py-20' id='explore'>
+      <div className='container flex py-20 relative' id='explore'>
+        <BackgroundShapes />
         <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ delay: getXOffsetDelay(), duration: 1 }} className='flex w-[61px] -ml-5 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight'>
           <p className='w-fit -rotate-90'>Explore</p>
           <span className='w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90'></span>
-          <p className='w-fit -rotate-90 sm:-ml-5 -ml-8 whitespace-nowrap'>© TAHA | 2024</p>
+          <p className='w-fit -rotate-90 sm:-ml-5 -ml-8 whitespace-nowrap'>© TAHA | 2025</p>
         </motion.div>
-        <div className='w-full lg:flex'>
+        <div className='w-full lg:flex relative z-10'>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer2} className=' lg:h-full text-neutral1 lg:flex items-start flex-col justify-end font-firaCode leading-6 text-pretty pb-10' >
             <motion.div className='inline' variants={fadeInFromBottom2}>Welcome to the Explore section, where my</motion.div>
             <motion.div className='inline' variants={fadeInFromBottom2}>journey as a Web Developer unfolds. Here,</motion.div>

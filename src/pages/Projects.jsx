@@ -1,6 +1,7 @@
 import { motion, useIsPresent } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BackgroundShapes2 from '../component/background2'
 import '../App.css';
 import zoaImg from '../assets/images/zoa.jpg';
 import sdsImg from '../assets/images/sds.png';
@@ -9,7 +10,9 @@ import forexImg from '../assets/images/Forex-Source.png';
 import tryboostingImg from '../assets/images/tryboosting.png';
 import pngtotextImg from '../assets/images/pngtotext.png';
 import estorefoamImg from '../assets/images/estorefoam.png';
+import cushcoreImg from '../assets/images/cushcore.png';
 import musafirImg from '../assets/images/musafir.png'
+import algoframeImg from '../assets/images/algoframe.png'
 import beatsImg from '../assets/images/beats.png'
 import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
@@ -37,11 +40,11 @@ const projectList = [
     name: "ZOA"
   },
   {
-    title: "Trading Charts Web",
-    link: "https://forexsource.net/",
-    img: forexImg,
-    textColor: "#fff",
-    name: "Forex Source"
+    title: "Tire Insert Store",
+    link: "https://cushcore.com/",
+    img: cushcoreImg,
+    textColor: "#7ec141",
+    name: "CushCore"
   },
   {
     title: "Game Boosting",
@@ -58,25 +61,39 @@ const projectList = [
     name: "Png to Text"
   },
   {
-    title: "E-Commerce Store",
+    title: "E-Commerce Foam's Store",
     link: "https://estorefoam.co.uk/",
     img: estorefoamImg,
     textColor: "#fff",
     name: "E-Store Foam"
   },
+  // {
+  //   title: "A Market Place",
+  //   link: "https://secondluv.pk/",
+  //   img: algoframeImg,
+  //   textColor: "#37c668",
+  //   name: "AlgoFrame"
+  // },
   {
-    title: "Practice - 1",
-    link: "https://beats-headphones-ten.vercel.app/",
-    img: beatsImg,
-    textColor: "#EDEEEF",
-    name: "Beats Headphones"
+    title: "Trading Charts Web",
+    link: "https://forexsource.net/",
+    img: forexImg,
+    textColor: "#fff",
+    name: "Forex Source"
   },
   {
-    title: "Practice - 2",
+    title: "Practice - 1",
     link: "https://musafir-pakistan.vercel.app/",
     img: musafirImg,
     textColor: "#9DE793",
     name: "Musafir"
+  },
+  {
+    title: "Practice - 2",
+    link: "https://beats-headphones-ten.vercel.app/",
+    img: beatsImg,
+    textColor: "#fff",
+    name: "Beats Headphones"
   },
 ];
 
@@ -116,6 +133,7 @@ const Projects = () => {
   return (
     <>
       <div className='container pl-10'>
+
         <div className='fixed left-0 h-screen py-20'>
           <motion.div
             initial="hidden"
@@ -126,16 +144,17 @@ const Projects = () => {
           >
             <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
             <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
-            <p className="w-fit -rotate-90 md:-ml-5 -ml-7 whitespace-nowrap">© TAHA | 2024</p>
+            <p className="w-fit -rotate-90 md:-ml-5 -ml-7 whitespace-nowrap">© TAHA | 2025</p>
           </motion.div>
         </div>
         <div className='py-10 xl:p-20'>
+          <BackgroundShapes2 numberOfParticles='20' />
           <div className='lg:w-[60%] z-10 relative'>
-            <AnimatedHeader 
+            <AnimatedHeader
               title="Projects"
-              initialY={200} 
-              spanWidths={[400, 300]} 
-              delay={0.5} 
+              initialY={200}
+              spanWidths={[400, 300]}
+              delay={0.5}
             />
             <div className='bg-primary relative z-10 pr-10'>
               <div className="text-white">
@@ -163,7 +182,7 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
       <motion.div
         initial={{ scaleX: 1 }}
