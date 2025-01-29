@@ -11,14 +11,11 @@
 
 @font-face { font-family: 'roman'; src: url('/src/assets/fonts/GrandSlang-Roman.ttf') format('truetype');}
 
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* html{
-  scroll-behavior: smooth;
-  
-} */
 
 @layer{
   .container{
@@ -37,4 +34,9 @@ body {
   bottom: 0;
   background-color: white;
   z-index: 999;
+}
+
+.league-spartan{
+  font-family: "League Spartan", serif;
+  font-optical-sizing: auto;
 }

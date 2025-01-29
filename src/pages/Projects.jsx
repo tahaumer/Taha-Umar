@@ -16,6 +16,7 @@ import algoframeImg from '../assets/images/algoframe.png'
 import beatsImg from '../assets/images/beats.png'
 import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
+import CaseStudyMain from '../component/CaseStudyMain';
 
 const projectList = [
   {
@@ -164,7 +165,10 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3 gap-y-10 flex-wrap bg-primary z-10 relative pt-5'>
+          <div className='mt-10'>
+            <CaseStudyMain/>
+          </div>
+          {/* <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3 gap-y-10 flex-wrap bg-primary z-10 relative pt-5'>
             {projectList.map((project, index) => (
               <div key={index}>
                 <h5 className="mb-4 text-2xl font-roman font-bold text-white">{project.title}:</h5>
@@ -180,7 +184,7 @@ const Projects = () => {
                 </Link>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         <Footer />
       </div>

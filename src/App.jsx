@@ -16,7 +16,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Hide loading after 1 second
-    }, 1500); // 1 second delay for loading
+    }, 0); // 1 second delay for loading
 
     return () => clearTimeout(timer); // Cleanup timeout on unmount
   }, []);
@@ -25,7 +25,7 @@ const App = () => {
     <div className="overflow-x-hidden">
       {isLoading ? (
         <div className="fixed inset-0 bg-white flex justify-center items-center z-50">
-          <img src={SVG} alt='text' />
+          {/* <img src={SVG} alt='text' /> */}
         </div>
       ) : (
         <AnimatePresence mode="wait">
