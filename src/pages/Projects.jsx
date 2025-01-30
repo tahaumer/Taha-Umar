@@ -23,49 +23,56 @@ const projectList = [
     title: "Studio Platform",
     link: "https://snowdreamstudios.com/",
     img: sdsImg,
-    textColor: "#05CAFA",
+    textColor: "text-[#000]",
+    bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]",
     name: "Snow Dream Studios"
   },
   {
     title: "Calculation Platform",
     link: "https://tool-matrix.vercel.app/",
     img: toolImg,
-    textColor: "#D9784E",
+    textColor: "text-[#fff]",
+    bgColor: "from-[#d9784e94] to-[#d9784e63]",
     name: "Tool Matrix"
   },
   {
     title: "Clinic Management Suite",
     link: "https://zoa.ai/",
     img: zoaImg,
-    textColor: "#2abec8",
+    textColor: "text-[#2abec8]",
+    bgColor: "from-[#092544] to-[#09254441]",
     name: "ZOA"
   },
   {
     title: "Tire Insert Store",
     link: "https://cushcore.com/",
     img: cushcoreImg,
-    textColor: "#7ec141",
+    textColor: "text-[#fff]",
+    bgColor: "from-[#7ec141] to-[#7fc14182]",
     name: "CushCore"
   },
   {
     title: "Game Boosting",
     link: "https://tryboosting.com/",
     img: tryboostingImg,
-    textColor: "#66FCF1",
+    textColor: "text-[#000]",
+    bgColor: "from-[#66fcf2] to-[#66fcf24e]",
     name: "Try Boosting"
   },
   {
     title: "Image to Text Converter",
     link: "https://pngtotext.com/",
     img: pngtotextImg,
-    textColor: "#44b1e5",
+    textColor: "text-[#44b1e5]",
+    bgColor: "from-[#114e7dd7] to-[#114e7d75]",
     name: "Png to Text"
   },
   {
     title: "E-Commerce Foam's Store",
     link: "https://estorefoam.co.uk/",
     img: estorefoamImg,
-    textColor: "#fff",
+    textColor: "text-[#fff]",
+    bgColor: "from-[#fdfeffd7] to-[#ffffff75]",
     name: "E-Store Foam"
   },
   // {
@@ -79,21 +86,24 @@ const projectList = [
     title: "Trading Charts Web",
     link: "https://forexsource.net/",
     img: forexImg,
-    textColor: "#fff",
+    textColor: "text-[#fff]",
+    bgColor: "from-[#94050f8b] to-[#94050f46] ",
     name: "Forex Source"
   },
   {
     title: "Practice - 1",
     link: "https://musafir-pakistan.vercel.app/",
     img: musafirImg,
-    textColor: "#9DE793",
+    textColor: "text-[#6bac34]",
+    bgColor: "from-[#5b9c5780] to-[#5b9c5752]",
     name: "Musafir"
   },
   {
     title: "Practice - 2",
     link: "https://beats-headphones-ten.vercel.app/",
     img: beatsImg,
-    textColor: "#fff",
+    textColor: "text-[#db0104]",
+    bgColor: "from-[#ef4f4190] to-[#ef4f414a]",
     name: "Beats Headphones"
   },
 ];
@@ -165,8 +175,24 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className='mt-10'>
-            <CaseStudyMain/>
+          <div className='mt-10 space-y-5'>
+            {projectList.map((project, index) => {
+              const number = (index + 1).toString().padStart(2, '0');
+
+              return (
+                <div key={index}>
+                  <CaseStudyMain
+                    textColor={`${project.textColor} ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
+                    bgColor={project.bgColor}
+                    title={project.title}
+                    link={project.link}
+                    image={project.img}
+                    description={project.description}
+                    number={number}
+                  />
+                </div>
+              );
+            })}
           </div>
           {/* <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3 gap-y-10 flex-wrap bg-primary z-10 relative pt-5'>
             {projectList.map((project, index) => (
