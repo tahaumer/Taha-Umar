@@ -90,11 +90,13 @@ const Home = () => {
   };
 
   useEffect(() => {
-    preloadProjects(); // Preload the Projects page
-    preloadProjectsImages(); // Preload all project images
+    const timeout = setTimeout(() => {
+      preloadProjects(); 
+      preloadProjectsImages();
+    }, 2000);
+    return () => clearTimeout(timeout);
   }, []);
   
-  // Easing function that starts slow and accelerates
   Math.easeOutCubic = (t, b, c, d) => {
     t /= d;
     return c * (1 - Math.pow(1 - t, 3)) + b; // Adjusted to ease out
