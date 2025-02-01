@@ -12,7 +12,7 @@ const Button = ({ text, icon, redirectUrl, downloadUrl,invert=false, className="
                     <div className="relative h-full w-10 bg-black/20"></div>
                 </div>
             </button>
-            <button className={`ml-3 ${className} w-[50px] h-[50px] flex justify-center items-center`}>
+            <button className={`ml-3 ${className} w-[50px] h-[50px] flex justify-center items-center z-10`}>
                 <img src={icon ? download : arrow} alt="icon" className={`group-hover/button:-rotate-45 transition-all duration-300 ${invert ? 'invert' : ''}`} />
             </button>
         </div>

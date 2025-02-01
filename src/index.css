@@ -11,8 +11,6 @@
 
 @font-face { font-family: 'roman'; src: url('/src/assets/fonts/GrandSlang-Roman.ttf') format('truetype');}
 
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

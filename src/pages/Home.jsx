@@ -1,13 +1,20 @@
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { motion, useIsPresent } from "framer-motion";
+import { preloadProjectsImages } from '../utils/preloadImages';
+
+import BackgroundShapes from '../component/Background';
 import Button from '../component/Button'
+import ExploreBtn from '../component/ExploreBtn'
+import Navbar from '../component/Navbar';
+
 import facebook from '../assets/icons/facebook.svg'
 import instagram from '../assets/icons/instagram.svg'
 import linkdin from '../assets/icons/linkdin.svg'
-import ExploreBtn from '../component/ExploreBtn'
-import Navbar from '../component/Navbar';
-import { motion, useIsPresent } from "framer-motion";
-import { Link } from 'react-router-dom';
-import BackgroundShapes from '../component/Background'
 
+const preloadProjects = () => {
+  import("./Projects"); 
+};
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -81,6 +88,12 @@ const Home = () => {
 
     window.requestAnimationFrame(slowScroll);
   };
+
+  useEffect(() => {
+    preloadProjects(); // Preload the Projects page
+    preloadProjectsImages(); // Preload all project images
+  }, []);
+  
   // Easing function that starts slow and accelerates
   Math.easeOutCubic = (t, b, c, d) => {
     t /= d;

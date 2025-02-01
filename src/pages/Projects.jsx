@@ -18,128 +18,58 @@ import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
 import CaseStudyMain from '../component/CaseStudyMain';
 
-const projectList = [
-  {
-    title: "Studio Platform",
-    link: "https://snowdreamstudios.com/",
-    img: sdsImg,
-    textColor: "text-[#000]",
-    bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]",
-    name: "Snow Dream Studios"
-  },
-  {
-    title: "Calculation Platform",
-    link: "https://tool-matrix.vercel.app/",
-    img: toolImg,
-    textColor: "text-[#fff]",
-    bgColor: "from-[#d9784e94] to-[#d9784e63]",
-    name: "Tool Matrix"
-  },
-  {
-    title: "Clinic Management Suite",
-    link: "https://zoa.ai/",
-    img: zoaImg,
-    textColor: "text-[#2abec8]",
-    bgColor: "from-[#092544] to-[#09254441]",
-    name: "ZOA"
-  },
-  {
-    title: "Tire Insert Store",
-    link: "https://cushcore.com/",
-    img: cushcoreImg,
-    textColor: "text-[#fff]",
-    bgColor: "from-[#7ec141] to-[#7fc14182]",
-    name: "CushCore"
-  },
-  {
-    title: "Game Boosting",
-    link: "https://tryboosting.com/",
-    img: tryboostingImg,
-    textColor: "text-[#000]",
-    bgColor: "from-[#66fcf2] to-[#66fcf24e]",
-    name: "Try Boosting"
-  },
-  {
-    title: "Image to Text Converter",
-    link: "https://pngtotext.com/",
-    img: pngtotextImg,
-    textColor: "text-[#44b1e5]",
-    bgColor: "from-[#114e7dd7] to-[#114e7d75]",
-    name: "Png to Text"
-  },
-  {
-    title: "E-Commerce Foam's Store",
-    link: "https://estorefoam.co.uk/",
-    img: estorefoamImg,
-    textColor: "text-[#fff]",
-    bgColor: "from-[#fdfeffd7] to-[#ffffff75]",
-    name: "E-Store Foam"
-  },
-  // {
-  //   title: "A Market Place",
-  //   link: "https://secondluv.pk/",
-  //   img: algoframeImg,
-  //   textColor: "#37c668",
-  //   name: "AlgoFrame"
-  // },
-  {
-    title: "Trading Charts Web",
-    link: "https://forexsource.net/",
-    img: forexImg,
-    textColor: "text-[#fff]",
-    bgColor: "from-[#94050f8b] to-[#94050f46] ",
-    name: "Forex Source"
-  },
-  {
-    title: "Practice - 1",
-    link: "https://musafir-pakistan.vercel.app/",
-    img: musafirImg,
-    textColor: "text-[#6bac34]",
-    bgColor: "from-[#5b9c5780] to-[#5b9c5752]",
-    name: "Musafir"
-  },
-  {
-    title: "Practice - 2",
-    link: "https://beats-headphones-ten.vercel.app/",
-    img: beatsImg,
-    textColor: "text-[#db0104]",
-    bgColor: "from-[#ef4f4190] to-[#ef4f414a]",
-    name: "Beats Headphones"
-  },
-];
+  const projectList = [
+    { title: "Tool Matrix", link: "https://tool-matrix.vercel.app/", img: toolImg, textColor: "text-[#fff]", bgColor: "from-[#d9784e94] to-[#d9784e63]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
+    { title: "Snow Dream Studios", link: "https://snowdreamstudios.com/", img: sdsImg, textColor: "text-[#fff]", bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20' },
+    { title: "ZOA - Managment Suite", link: "https://zoa.ai/", img: zoaImg, textColor: "text-[#2abec8]", bgColor: "from-[#09254441] to-[#092544]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-50',origin: 'true' },
+    { title: "Cush Core", link: "https://cushcore.com/", img: cushcoreImg, textColor: "text-[#fff]", bgColor: "from-[#7fc141b9] to-[#7fc14137]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10' },
+    { title: "Try Boosting", link: "https://tryboosting.com/", img: tryboostingImg, textColor: "text-[#fff]", bgColor: "from-[#66fcf291] to-[#66fcf222]", btnPosition: 'flex-col items-end justify-start', transition: '-bottom-3 -right-12', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10', origin: 'true' },
+    { title: "PNG to TEXT", link: "https://pngtotext.com/", img: pngtotextImg, textColor: "text-[#44b1e5]", bgColor: "from-[#114e7dd7] to-[#114e7d75]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-20' },
+    { title: "E Srore Foam", link: "https://estorefoam.co.uk/", img: estorefoamImg, textColor: "text-[#dfe1e1]", bgColor: "from-[#a3d1ff96] to-[#a3d1ff49]", btnPosition: 'flex-col items-start', transition: '-bottom-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
+    { title: "Forex Source", link: "https://forexsource.net/", img: forexImg, textColor: "text-[#fff]", bgColor: "from-[#85020487] to-[#94050f2d]", btnPosition: 'flex-col items-start', transition: '-bottom-10 right-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50'  },
+    { title: "Musafir", link: "https://musafir-pakistan.vercel.app/", img: musafirImg, textColor: "text-[#fff]", bgColor: "from-[#5b9c5780] to-[#5b9c5752]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
+    { title: "Beats Headphones", link: "https://beats-headphones-ten.vercel.app/", img: beatsImg, textColor: "text-[#db0104]", bgColor: "from-[#ef4f4190] to-[#ef4f414a]", btnPosition: 'flex-col items-start justify-end', transition: '-top-10 -right-10', position: '-translate-x-5 group-hover:translate-x-0', opacity: 'opacity-30'  },
+    // {
+    //   title: "A Market Place",
+    //   link: "https://secondluv.pk/",
+    //   img: algoframeImg,
+    //   textColor: "#37c668",
+    //   name: "AlgoFrame"
+    // },
+  ];
 
-const Projects = () => {
-  const isPresent = useIsPresent();
-  const [xOffset, setXOffset] = useState(getXOffset());
-  const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
+  const Projects = () => {
+    const isPresent = useIsPresent();
+    const [xOffset, setXOffset] = useState(getXOffset());
+    const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
+    useEffect(() => {
+      window.scrollTo(0, 0);
 
-    const handleResize = () => {
-      setXOffset(getXOffset());
-      setXOffsetDelay(getXOffsetDelay());
+      const handleResize = () => {
+        setXOffset(getXOffset());
+        setXOffsetDelay(getXOffsetDelay());
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+
+    // Declare functions above their first usage
+    function getXOffset() {
+      return window.innerWidth < 700 ? -10 : -100;
+    }
+
+    function getXOffsetDelay() {
+      return window.innerWidth < 700 ? 1 : 1.5;
+    }
+
+    const fadeInFromLeft = {
+      hidden: { opacity: 0, x: xOffset },
+      visible: { opacity: 1, x: 0 },
     };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // Declare functions above their first usage
-  function getXOffset() {
-    return window.innerWidth < 700 ? -10 : -100;
-  }
-
-  function getXOffsetDelay() {
-    return window.innerWidth < 700 ? 1 : 1.5;
-  }
-
-  const fadeInFromLeft = {
-    hidden: { opacity: 0, x: xOffset },
-    visible: { opacity: 1, x: 0 },
-  };
 
   return (
     <>
@@ -175,7 +105,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div className='mt-10 space-y-5'>
+          <div className='mt-10 space-y-10'>
             {projectList.map((project, index) => {
               const number = (index + 1).toString().padStart(2, '0');
 
@@ -189,28 +119,16 @@ const Projects = () => {
                     image={project.img}
                     description={project.description}
                     number={number}
+                    position={project.position}
+                    btnPosition={project.btnPosition}
+                    translate={project.transition}
+                    opacity={project.opacity}
+                    origin={project.origin}
                   />
                 </div>
               );
             })}
           </div>
-          {/* <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3 gap-y-10 flex-wrap bg-primary z-10 relative pt-5'>
-            {projectList.map((project, index) => (
-              <div key={index}>
-                <h5 className="mb-4 text-2xl font-roman font-bold text-white">{project.title}:</h5>
-                <Link to={project.link} target="_blank" className="relative grid h-[10rem] md:h-[20rem] group max-w-sm flex-col items-end justify-center overflow-hidden rounded-lg bg-white">
-                  <div className="absolute inset-0 m-0 h-full w-full group-hover:scale-110 transition-all duration-500 overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${project.img})` }}>
-                    <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
-                  </div>
-                  <div className="relative text-center px-6 py-14 md:px-12">
-                    <h2 className="mb-6 text-3xl font-bold font-openSans" style={{ color: project.textColor }}>
-                      {project.name}
-                    </h2>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div> */}
         </div>
         <Footer />
       </div>
