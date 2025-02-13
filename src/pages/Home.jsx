@@ -115,7 +115,7 @@ const Home = () => {
     <div className='relative w-full'>
       <Navbar />
       <div className='absolute -top-36 -right-12 w-[200px] h-[200px] blur-[0.6px] border border-neutral2 rounded-full'></div>
-      <motion.div initial={{ scaleX: 1 }} animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }} exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }} style={{ originX: isPresent ? 0 : 1 }} className="privacy-screen" />
+      <motion.div initial={{ scaleX: 1 }} animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }} exit={{ scaleX: 1, transition: { duration: 1, ease: "circIn" } }} style={{ originX: isPresent ? 0 : 1 }} className="privacy-screen" />
       <div className="container h-[80vh] flex flex-col justify-center">
         <BackgroundShapes />
         <motion.div initial="hidden" animate="visible" variants={fadeInFromTop} className='lg:hidden mb-6 z-10 relative'>
@@ -194,7 +194,7 @@ const Home = () => {
       </motion.div>
       <div className='container flex py-20 relative' id='explore'>
         <BackgroundShapes />
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ delay: getXOffsetDelay(), duration: 1 }} className='flex w-[61px] -ml-5 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight'>
+        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ delay: getXOffsetDelay(), duration: 1 }} className='flex w-[61px] -ml-5 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold'>
           <p className='w-fit -rotate-90'>Explore</p>
           <span className='w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90'></span>
           <p className='w-fit -rotate-90 sm:-ml-5 -ml-8 whitespace-nowrap'>© TAHA | 2025</p>

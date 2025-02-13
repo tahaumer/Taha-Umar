@@ -38,7 +38,6 @@ const Contact = () => {
       };
     }, []);
   
-    // Declare functions above their first usage
     function getXOffset() {
       return window.innerWidth < 700 ? -10 : -100;
     }
@@ -83,6 +82,10 @@ const Contact = () => {
         return formValues[field].length > 0 || isFocused[field];
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <>
             <div className='container pl-10'>
@@ -93,7 +96,7 @@ const Contact = () => {
                         whileInView="visible"
                         variants={fadeInFromLeft}
                         transition={{ delay: xOffsetDelay, duration: 1 }}
-                        className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight"
+                        className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
                     >
                         <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
                         <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
@@ -114,14 +117,13 @@ const Contact = () => {
                                     I enjoy working with dedicated creatives from businesses that make the world beautiful. Together, we can inspire change and bring innovative ideas to life.
                                     We can accomplish so much together. Let’s talk!
                                 </p>
-                                <div className="border-dashed relative border-gray-400 border sm:p-10 p-5">
+                                <form onSubmit={handleSubmit} className="border-dashed relative border-gray-400 border sm:p-10 p-5">
                                     <div className='absolute left-0 right-0 top-0 bottom-0 w-full h-full blur-sm brightness-[0.3]'
                                         style={{
                                             backgroundImage: `url(${bgImage})`,
                                             backgroundRepeat: 'repeat',
                                             backgroundSize: 'auto'
                                         }}>
-
                                     </div>
                                     <div className='w-fit space-y-10'>
                                         <div className='flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-20'>
@@ -193,9 +195,9 @@ const Contact = () => {
                                                 Message
                                             </label>
                                         </div>
-                                        <Button text="Send Message" />
+                                        <Button type="submit" text="Send Message" />
                                     </div>
-                                </div>
+                                </form>
                             </div>
                             <p className='text-white text-2xl font-roman pl-3 mt-5 mb-3'>OR</p>
                             <a href='mailto:tahaumer21@gmail.com' className='flex items-center w-fit space-x-3 text-white font-roman md:text-3xl text-xl font-thin'> <img src={phone} alt="" /> <span> tahaumer21@gmail.com</span></a>
@@ -209,8 +211,8 @@ const Contact = () => {
             </div>
             <motion.div
                 initial={{ scaleX: 1 }}
-                animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-                exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
+                animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
+                exit={{ scaleX: 1, transition: { duration: 1, ease: "circIn" } }}
                 style={{ originX: isPresent ? 0 : 1 }}
                 className="privacy-screen"
             />

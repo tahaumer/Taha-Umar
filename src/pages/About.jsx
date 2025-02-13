@@ -60,7 +60,7 @@ const About = () => {
             whileInView="visible"
             variants={fadeInFromLeft}
             transition={{ delay: xOffsetDelay, duration: 1 }}
-            className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-mono py-5 font-extralight"
+            className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
           >
             <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
             <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
@@ -120,8 +120,8 @@ const About = () => {
       </div>
       <motion.div
         initial={{ scaleX: 1 }}
-        animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-        exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
+        animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }}
+        exit={{ scaleX: 1, transition: { duration: 1, ease: "circIn" } }}
         style={{ originX: isPresent ? 0 : 1 }}
         className="privacy-screen"
       />

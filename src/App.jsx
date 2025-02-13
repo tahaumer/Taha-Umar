@@ -4,22 +4,29 @@ import Home from './pages/Home';
 import { AnimatePresence } from 'framer-motion';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import CaseStudy from "./pages/CaseStudy";
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 
 const Projects = lazy(() => import("./pages/Projects"));
 
 const App = () => {
   const location = useLocation();
-
+  // Initialize Lenis
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
   return (
     <div className="overflow-x-hidden">
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact-me" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </AnimatePresence>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact-me" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/new" element={<CaseStudy />} />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 };
