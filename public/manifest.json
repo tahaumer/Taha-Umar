@@ -34,20 +34,6 @@
             "purpose": "maskable"
         }
     ],
-    "screenshots": [
-        {
-            "src": "preview-image.png",
-            "sizes": "3840x2160",
-            "type": "image/png",
-            "form_factor": "wide"
-        },
-        {
-            "src": "/screenshot-portrait.png",
-            "sizes": "824x1766",
-            "type": "image/png",
-            "form_factor": "narrow"
-        }
-    ],
     "categories": [
         "portfolio",
         "education",
