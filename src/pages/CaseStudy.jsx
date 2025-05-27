@@ -7,6 +7,7 @@ import Footer from '../component/Footer'
 import { useCursor } from '../context/CursorContext'
 import projectList from '../data/projects'
 import DesignSystem from '../component/DesignSystem'
+import zoaImg from '../assets/images/zoa.jpg'
 
 const CaseStudy = () => {
     const { setCursorVariant, setCursorText } = useCursor()
@@ -145,7 +146,7 @@ const CaseStudy = () => {
                 <p className='font-semibold font-firaCode absolute top-0 left-0 text-xl'>Next Case Study</p>
                 <h3 className='text-7xl font-roman font-semibold'>ZOA APP</h3>
                 <motion.div className='w-[400px] h-[280px] absolute top-[-30px] right-7' style={{ x: nextCaseParallax, y: nextCaseParallax }}>
-                    <img src='https://www.dtampe.com/_vercel/image?url=%2Fwork%2Fazad-tamac%2Fazad-tamac-macbook-1x1.jpg&w=1536&q=100' alt='Next Project Preview' />
+                    <img src={zoaImg} alt='Next Project Preview' />
                 </motion.div>
             </div>
 
