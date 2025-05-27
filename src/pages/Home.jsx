@@ -112,7 +112,7 @@ const Home = () => {
 
   const isPresent = useIsPresent();
   return (
-    <div className='relative w-full'>
+    <div className='relative w-full '>
       <Navbar />
       <div className='absolute -top-36 -right-12 w-[200px] h-[200px] blur-[0.6px] border border-neutral2 rounded-full'></div>
       <motion.div initial={{ scaleX: 1 }} animate={{ scaleX: 0, transition: { duration: 1, ease: "circOut" } }} exit={{ scaleX: 1, transition: { duration: 1, ease: "circIn" } }} style={{ originX: isPresent ? 0 : 1 }} className="privacy-screen" />

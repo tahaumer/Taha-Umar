@@ -1,7 +1,6 @@
-import React from 'react'
 import Button from './Button'
 
-const CaseStudyMain = ({ textColor, bgColor, title, link, image, description, number, translate, position, btnPosition, opacity, origin=false }) => {
+const CaseStudyMain = ({ textColor, bgColor, title, link, image, description, number, translate, position, btnPosition, opacity, origin=false, ava }) => {
     return (
         <div className={`relative w-full  md:w-[80%] shadow-xl h-[450px] ${textColor} p-16 flex justify-start bg-cover bg-center flex-col group`} style={{ backgroundImage: `url(${image})` }}>
             <div className={`absolute inset-0 bg-black ${opacity}`}></div>
@@ -20,7 +19,7 @@ const CaseStudyMain = ({ textColor, bgColor, title, link, image, description, nu
                 <h2 className="text-4xl font-bold z-10">{title}</h2>
                 <p className="italic mt-2">{description}</p>
                 <div className='w-fit mt-3'>
-                    <Button text="View Case Study" redirectUrl={'/project/new'} invert={false} className='bg-secondary text-primary rounded-sm' />
+                    <Button text="View Case Study" redirectUrl={ava ? `/project/${link}` : `/project/${link}/comming-soon`} invert={false} className='bg-secondary text-primary rounded-sm' />
                 </div>
             </div>
         </div>

@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import CaseStudy from "./pages/CaseStudy";
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
+import UnderConstruction from "./pages/UnderConstruction";
 
 const Projects = lazy(() => import("./pages/Projects"));
 
@@ -24,7 +25,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact-me" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project/new" element={<CaseStudy />} />
+          <Route path="/project/:name" element={<CaseStudy />} />
+          <Route path="/project/:name/comming-soon" element={<UnderConstruction />} />
         </Routes>
       </AnimatePresence>
     </div>

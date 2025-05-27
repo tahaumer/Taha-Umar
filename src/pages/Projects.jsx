@@ -19,16 +19,16 @@ import Footer from '../component/Footer';
 import CaseStudyMain from '../component/CaseStudyMain';
 
   const projectList = [
-    { title: "Tool Matrix", link: "https://tool-matrix.vercel.app/", img: toolImg, textColor: "text-[#fff]", bgColor: "from-[#d9784e94] to-[#d9784e63]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
-    { title: "Snow Dream Studios", link: "https://snowdreamstudios.com/", img: sdsImg, textColor: "text-[#fff]", bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20' },
-    { title: "ZOA - Managment Suite", link: "https://zoa.ai/", img: zoaImg, textColor: "text-[#2abec8]", bgColor: "from-[#09254441] to-[#092544]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-50',origin: 'true' },
-    { title: "Cush Core", link: "https://cushcore.com/", img: cushcoreImg, textColor: "text-[#fff]", bgColor: "from-[#7fc141b9] to-[#7fc14137]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10' },
-    { title: "Try Boosting", link: "https://tryboosting.com/", img: tryboostingImg, textColor: "text-[#fff]", bgColor: "from-[#66fcf291] to-[#66fcf222]", btnPosition: 'flex-col items-end justify-start', transition: '-bottom-3 -right-12', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10', origin: 'true' },
-    { title: "PNG to TEXT", link: "https://pngtotext.com/", img: pngtotextImg, textColor: "text-[#44b1e5]", bgColor: "from-[#114e7dd7] to-[#114e7d75]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-20' },
-    { title: "E Srore Foam", link: "https://estorefoam.co.uk/", img: estorefoamImg, textColor: "text-[#dfe1e1]", bgColor: "from-[#a3d1ff96] to-[#a3d1ff49]", btnPosition: 'flex-col items-start', transition: '-bottom-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
-    { title: "Forex Source", link: "https://forexsource.net/", img: forexImg, textColor: "text-[#fff]", bgColor: "from-[#85020487] to-[#94050f2d]", btnPosition: 'flex-col items-start', transition: '-bottom-10 right-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50'  },
-    { title: "Musafir", link: "https://musafir-pakistan.vercel.app/", img: musafirImg, textColor: "text-[#fff]", bgColor: "from-[#5b9c5780] to-[#5b9c5752]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
-    { title: "Beats Headphones", link: "https://beats-headphones-ten.vercel.app/", img: beatsImg, textColor: "text-[#db0104]", bgColor: "from-[#ef4f4190] to-[#ef4f414a]", btnPosition: 'flex-col items-start justify-end', transition: '-top-10 -right-10', position: '-translate-x-5 group-hover:translate-x-0', opacity: 'opacity-30'  },
+    { title: "Tool Matrix", link: "tool-matrix", ava: true,  img: toolImg, textColor: "text-[#fff]", bgColor: "from-[#d9784e94] to-[#d9784e63]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
+    { title: "Snow Dream Studios", link: "snow-dream-studios",  ava: false,  img: sdsImg, textColor: "text-[#fff]", bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20' },
+    { title: "ZOA - Managment Suite", link: "zoa",  ava: false,  img: zoaImg, textColor: "text-[#2abec8]", bgColor: "from-[#09254441] to-[#092544]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-50',origin: 'true' },
+    { title: "Cush Core", link: "cush-core",  ava: false,  img: cushcoreImg, textColor: "text-[#fff]", bgColor: "from-[#7fc141b9] to-[#7fc14137]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10' },
+    { title: "Try Boosting", link: "try-boosting",  ava: false,  img: tryboostingImg, textColor: "text-[#fff]", bgColor: "from-[#66fcf291] to-[#66fcf222]", btnPosition: 'flex-col items-end justify-start', transition: '-bottom-3 -right-12', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10', origin: 'true' },
+    { title: "PNG to TEXT", link: "png-to-text",  ava: false,  img: pngtotextImg, textColor: "text-[#44b1e5]", bgColor: "from-[#114e7dd7] to-[#114e7d75]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-20' },
+    { title: "E Srore Foam", link: "e-store-foam",  ava: false,  img: estorefoamImg, textColor: "text-[#dfe1e1]", bgColor: "from-[#a3d1ff96] to-[#a3d1ff49]", btnPosition: 'flex-col items-start', transition: '-bottom-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
+    { title: "Forex Source", link: "forex-source",  ava: false,  img: forexImg, textColor: "text-[#fff]", bgColor: "from-[#85020487] to-[#94050f2d]", btnPosition: 'flex-col items-start', transition: '-bottom-10 right-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50'  },
+    { title: "Musafir", link: "musafir",  ava: false,  img: musafirImg, textColor: "text-[#fff]", bgColor: "from-[#5b9c5780] to-[#5b9c5752]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
+    { title: "Beats Headphones", link: "beats",  ava: false,  img: beatsImg, textColor: "text-[#db0104]", bgColor: "from-[#ef4f4190] to-[#ef4f414a]", btnPosition: 'flex-col items-start justify-end', transition: '-top-10 -right-10', position: '-translate-x-5 group-hover:translate-x-0', opacity: 'opacity-30'  },
     // {
     //   title: "A Market Place",
     //   link: "https://secondluv.pk/",
@@ -115,6 +115,7 @@ import CaseStudyMain from '../component/CaseStudyMain';
                     textColor={`${project.textColor} ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}
                     bgColor={project.bgColor}
                     title={project.title}
+                    ava={project.ava}
                     link={project.link}
                     image={project.img}
                     description={project.description}
