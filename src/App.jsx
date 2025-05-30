@@ -29,8 +29,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact-me" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:name" element={<CaseStudy />} />
-          <Route path="/project/:name/comming-soon" element={<UnderConstruction />} />
+          <Route path="/case-study/:name" element={<CaseStudy />} />
+          <Route path="/case-study/:name/comming-soon" element={<UnderConstruction />} />
         </Routes>
       </AnimatePresence>
     </div>

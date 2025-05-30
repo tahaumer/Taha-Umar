@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@312&display=swap');
+
 @font-face { font-family: 'firaCode'; src: url('/src/assets/fonts/FiraCode-Light.ttf') format('truetype'); font-weight: 100; font-style: normal; }
 @font-face { font-family: 'firaCode'; src: url('/src/assets/fonts/FiraCode-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; }
 @font-face { font-family: 'firaCode'; src: url('/src/assets/fonts/FiraCode-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; }
@@ -10,6 +12,9 @@
 @font-face { font-family: 'openSans'; src: url('/src/assets/fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype'); font-weight: 600; font-style: normal; }
 
 @font-face { font-family: 'roman'; src: url('/src/assets/fonts/GrandSlang-Roman.ttf') format('truetype');}
+
+@font-face { font-family: "scriptMT-Bold"; src: url("/src/assets/fonts/ScriptMTBold.ttf") format("truetype"), url("/src/assets/fonts/ScriptMTBold.ttf") format("woff"); font-weight: bold; font-style: normal; }
+
 
 @tailwind base;
 @tailwind components;

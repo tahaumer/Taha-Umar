@@ -1,5 +1,5 @@
 import { motion, useIsPresent, useScroll, useTransform } from 'framer-motion'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import '../App.css'
 import Button from '../component/Button'
@@ -10,10 +10,14 @@ import DesignSystem from '../component/DesignSystem'
 import zoaImg from '../assets/images/zoa.jpg'
 
 const CaseStudy = () => {
+    useEffect(() => { window.scrollTo(0, 0) }, [])
+
     const { setCursorVariant, setCursorText } = useCursor()
     const isPresent = useIsPresent()
     const { name } = useParams()
     const project = projectList.find(p => p.link === name)
+    const currentIndex = projectList.findIndex(p => p.link === name)
+    const nextProject = projectList[(currentIndex + 1) % projectList.length]
 
     if (!project) return <div className="text-white p-10">Project not found.</div>
 
@@ -58,7 +62,7 @@ const CaseStudy = () => {
             <motion.section style={{ y: textParallax }} className={`${project.bgColor || 'bg-neutral1'} z-5 z-[1] relative container header pt-[25svh] md:pt-[35svh] pb-12 sm:pb-14`}>
                 <div className="grid-cols-12">
                     <div className="col-span-full ml-16 sm:col-span-8">
-                        <p className="mb-2 client">Let's Improve Your Calculation Skills with Us</p>
+                        <p className="mb-2 client">{project.subTitle}</p>
                         <h1 className="text-3xl md:text-4xl font-roman mb-0">{project.title}</h1>
                     </div>
                 </div>
@@ -112,28 +116,18 @@ const CaseStudy = () => {
                     <img src={project.img3} alt="" className='w-full h-full object-cover object-center' />
                 </motion.div>
             </div>
-
             <DesignSystem
-                fonts={[
-                    { fontFamily: 'Sans Serif', fontClass: '', description: 'Primary heading font with classic proportions and elegant details' },
-                ]}
-                colors={[
-                    { bgClass: 'bg-[#a4481e]', name: 'Metallic Brown', hex: '#a4481e' },
-                    { bgClass: 'bg-black', name: 'Black', hex: '#000000' },
-                    { bgClass: 'bg-[#2b2e32]', name: 'Gunmetal', hex: '#2b2e32' },
-                    { bgClass: 'bg-white', name: 'White', hex: '#FFFFFF' },
-                    { bgClass: 'bg-[#f1f1fd]', name: 'Alice Blue', hex: '#f1f1fd' },
-                    { bgClass: 'bg-[#eff2f7]', name: 'Anti-Flash White', hex: '#eff2f7' },
-                ]}
+                fonts={project.fonts || []}
+                colors={project.colors || []}
             // spacing={[8, 16, 24, 32]}
             />
 
-            <div className='font-openSans text-2xl max-w-[500px] mx-auto border-l-2 border-black pl-4 text-pretty mb-20 font-sans'>
+            <div className='font-openSans text-2xl max-w-[500px] mx-auto border-l-2 border-black pl-4 text-pretty mb-20'>
                 <p>"{project.descriptionShort}"</p>
             </div>
 
             {/* Next Case */}
-            <div ref={nextCaseRef} className='max-w-[1300px] cursor-none h-[400px] group flex items-center relative mx-auto border-t border-black mt-10'
+            <Link to={nextProject.subTitle ? `/case-study/${nextProject.link}` : `/case-study/${nextProject.link}/comming-soon`} ref={nextCaseRef} className='max-w-[1300px] cursor-none h-[400px] group flex items-center relative mx-auto border-t border-black mt-10'
                 onMouseEnter={() => {
                     setCursorText("View")
                     setCursorVariant("project")
@@ -144,11 +138,11 @@ const CaseStudy = () => {
                 }}
             >
                 <p className='font-semibold font-firaCode absolute top-0 left-0 text-xl'>Next Case Study</p>
-                <h3 className='text-7xl font-roman font-semibold'>ZOA APP</h3>
+                <h3 className='text-7xl font-roman font-semibold'>{nextProject.title.split(' - ')[0]}</h3>
                 <motion.div className='w-[400px] h-[280px] absolute top-[-30px] right-7' style={{ x: nextCaseParallax, y: nextCaseParallax }}>
-                    <img src={zoaImg} alt='Next Project Preview' />
+                    <img src={nextProject.img} alt='Next Project Preview' />
                 </motion.div>
-            </div>
+            </Link>
 
             {/* Page Exit Animation */}
             <motion.div

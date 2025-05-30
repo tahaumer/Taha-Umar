@@ -19,7 +19,7 @@ const CaseStudyMain = ({ textColor, bgColor, title, link, image, description, nu
                 <h2 className="text-4xl font-bold z-10">{title}</h2>
                 <p className="italic mt-2">{description}</p>
                 <div className='w-fit mt-3'>
-                    <Button text="View Case Study" redirectUrl={ava ? `/project/${link}` : `/project/${link}/comming-soon`} invert={false} className='bg-secondary text-primary rounded-sm' />
+                    <Button text="View Case Study" redirectUrl={ava ? `/case-study/${link}` : `/case-study/${link}/comming-soon`} invert={false} className='bg-secondary text-primary rounded-sm' />
                 </div>
             </div>
         </div>
