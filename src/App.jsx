@@ -9,6 +9,7 @@ import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import UnderConstruction from "./pages/UnderConstruction";
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const Projects = lazy(() => import("./pages/Projects"));
 
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <div className="overflow-x-hidden">
       <Analytics />
+      <SpeedInsights/>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
