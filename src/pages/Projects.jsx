@@ -18,64 +18,64 @@ import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
 import CaseStudyMain from '../component/CaseStudyMain';
 
-  const projectList = [
-    { title: "Tool Matrix", link: "tool-matrix", ava: true,  img: toolImg, textColor: "text-[#fff]", bgColor: "from-[#d9784e94] to-[#d9784e63]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
-    { title: "Snow Dream Studios", link: "snow-dream-studios",  ava: true,  img: sdsImg, textColor: "text-[#fff]", bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20' },
-    { title: "ZOA - Managment Suite", link: "zoa",  ava: false,  img: zoaImg, textColor: "text-[#2abec8]", bgColor: "from-[#09254441] to-[#092544]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-50',origin: 'true' },
-    { title: "Cush Core", link: "cush-core",  ava: false,  img: cushcoreImg, textColor: "text-[#fff]", bgColor: "from-[#7fc141b9] to-[#7fc14137]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10' },
-    { title: "Try Boosting", link: "try-boosting",  ava: false,  img: tryboostingImg, textColor: "text-[#fff]", bgColor: "from-[#66fcf291] to-[#66fcf222]", btnPosition: 'flex-col items-end justify-start', transition: '-bottom-3 -right-12', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10', origin: 'true' },
-    { title: "PNG to TEXT", link: "png-to-text",  ava: false,  img: pngtotextImg, textColor: "text-[#44b1e5]", bgColor: "from-[#114e7dd7] to-[#114e7d75]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-20' },
-    { title: "E Srore Foam", link: "e-store-foam",  ava: false,  img: estorefoamImg, textColor: "text-[#dfe1e1]", bgColor: "from-[#a3d1ff96] to-[#a3d1ff49]", btnPosition: 'flex-col items-start', transition: '-bottom-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20',origin: 'true' },
-    { title: "Forex Source", link: "forex-source",  ava: false,  img: forexImg, textColor: "text-[#fff]", bgColor: "from-[#85020487] to-[#94050f2d]", btnPosition: 'flex-col items-start', transition: '-bottom-10 right-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50'  },
-    { title: "Musafir", link: "musafir",  ava: false,  img: musafirImg, textColor: "text-[#fff]", bgColor: "from-[#5b9c5780] to-[#5b9c5752]", btnPosition: 'flex-col items-end justify-end', transition: '-top-10 left-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
-    { title: "Beats Headphones", link: "beats",  ava: false,  img: beatsImg, textColor: "text-[#db0104]", bgColor: "from-[#ef4f4190] to-[#ef4f414a]", btnPosition: 'flex-col items-start justify-end', transition: '-top-10 -right-10', position: '-translate-x-5 group-hover:translate-x-0', opacity: 'opacity-30'  },
-    // {
-    //   title: "A Market Place",
-    //   link: "https://secondluv.pk/",
-    //   img: algoframeImg,
-    //   textColor: "#37c668",
-    //   name: "AlgoFrame"
-    // },
-  ];
+const projectList = [
+  { title: "Tool Matrix", link: "tool-matrix", ava: true, img: toolImg, textColor: "text-[#fff]", bgColor: "from-[#d9784e94] to-[#d9784e63]", btnPosition: 'flex-col md:items-end md:justify-end', transition: '-top-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20', origin: 'true' },
+  { title: "Snow Dream Studios", link: "snow-dream-studios", ava: true, img: sdsImg, textColor: "text-[#fff]", bgColor: "from-[#05c9fa8d] to-[#05c9fa2a]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20' },
+  { title: "ZOA - Managment Suite", link: "zoa", ava: false, img: zoaImg, textColor: "text-[#2abec8]", bgColor: "from-[#09254441] to-[#092544]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-50', origin: 'true' },
+  { title: "Cush Core", link: "cush-core", ava: false, img: cushcoreImg, textColor: "text-[#fff]", bgColor: "from-[#7fc141b9] to-[#7fc14137]", btnPosition: 'flex-col items-start', transition: '-bottom-3 -right-12', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10' },
+  { title: "Try Boosting", link: "try-boosting", ava: false, img: tryboostingImg, textColor: "text-[#fff]", bgColor: "from-[#66fcf291] to-[#66fcf222]", btnPosition: 'flex-col md:items-end justify-start', transition: '-bottom-3 -right-12', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-10', origin: 'true' },
+  { title: "PNG to TEXT", link: "png-to-text", ava: false, img: pngtotextImg, textColor: "text-[#44b1e5]", bgColor: "from-[#114e7dd7] to-[#114e7d75]", btnPosition: 'flex-col items-start', transition: '-top-10 right-5', position: 'translate-x-5 group-hover:translate-x-0', opacity: 'opacity-20' },
+  { title: "E Srore Foam", link: "e-store-foam", ava: false, img: estorefoamImg, textColor: "text-[#dfe1e1]", bgColor: "from-[#a3d1ff96] to-[#a3d1ff49]", btnPosition: 'flex-col items-start', transition: '-bottom-10 left-5', position: 'translate-y-5 group-hover:translate-y-0', opacity: 'opacity-20', origin: 'true' },
+  { title: "Forex Source", link: "forex-source", ava: false, img: forexImg, textColor: "text-[#fff]", bgColor: "from-[#85020487] to-[#94050f2d]", btnPosition: 'flex-col items-start', transition: '-bottom-10 right-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
+  { title: "Musafir", link: "musafir", ava: false, img: musafirImg, textColor: "text-[#fff]", bgColor: "from-[#5b9c5780] to-[#5b9c5752]", btnPosition: 'flex-col md:items-end md:justify-end', transition: '-top-10 left-5', position: '-translate-y-5 group-hover:translate-y-0', opacity: 'opacity-50' },
+  { title: "Beats Headphones", link: "beats", ava: false, img: beatsImg, textColor: "text-[#db0104]", bgColor: "from-[#ef4f4190] to-[#ef4f414a]", btnPosition: 'flex-col items-start md:justify-end', transition: '-top-10 -right-10', position: '-translate-x-5 group-hover:translate-x-0', opacity: 'opacity-30' },
+  // {
+  //   title: "A Market Place",
+  //   link: "https://secondluv.pk/",
+  //   img: algoframeImg,
+  //   textColor: "#37c668",
+  //   name: "AlgoFrame"
+  // },
+];
 
-  const Projects = () => {
-    const isPresent = useIsPresent();
-    const [xOffset, setXOffset] = useState(getXOffset());
-    const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
+const Projects = () => {
+  const isPresent = useIsPresent();
+  const [xOffset, setXOffset] = useState(getXOffset());
+  const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
 
-      const handleResize = () => {
-        setXOffset(getXOffset());
-        setXOffsetDelay(getXOffsetDelay());
-      };
-
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-
-    // Declare functions above their first usage
-    function getXOffset() {
-      return window.innerWidth < 700 ? -10 : -100;
-    }
-
-    function getXOffsetDelay() {
-      return window.innerWidth < 700 ? 1 : 1.5;
-    }
-
-    const fadeInFromLeft = {
-      hidden: { opacity: 0, x: xOffset },
-      visible: { opacity: 1, x: 0 },
+    const handleResize = () => {
+      setXOffset(getXOffset());
+      setXOffsetDelay(getXOffsetDelay());
     };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Declare functions above their first usage
+  function getXOffset() {
+    return window.innerWidth < 700 ? -10 : -100;
+  }
+
+  function getXOffsetDelay() {
+    return window.innerWidth < 700 ? 1 : 1.5;
+  }
+
+  const fadeInFromLeft = {
+    hidden: { opacity: 0, x: xOffset },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
     <>
-      <div className='container pl-10'>
-
-        <div className='fixed left-0 h-screen py-20'>
+      <div className='container md:pl-10'>
+        <Footer />
+        <div className='fixed left-0 h-screen py-20 md:block hidden'>
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -97,7 +97,7 @@ import CaseStudyMain from '../component/CaseStudyMain';
               spanWidths={[400, 300]}
               delay={0.5}
             />
-            <div className='bg-primary relative z-10 pr-10'>
+            <div className='bg-primary relative z-10 md:pr-10'>
               <div className="text-white">
                 <p className='text-white font-openSans font-thin'>
                   Welcome to the Projects Showcase! Here, you’ll find a curated collection of creative and impactful projects, each representing my commitment to innovation, quality, and creativity. This page serves as a window into my diverse capabilities, featuring both past and ongoing work across various fields. Whether it's web design, application development, or visual storytelling, each project is crafted with passion and precision to deliver value and inspiration. Dive into the details, explore unique features, and discover how I bring ideas to life!
@@ -131,7 +131,6 @@ import CaseStudyMain from '../component/CaseStudyMain';
             })}
           </div>
         </div>
-        <Footer />
       </div>
       <motion.div
         initial={{ scaleX: 1 }}

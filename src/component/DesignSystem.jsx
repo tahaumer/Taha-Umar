@@ -51,7 +51,7 @@ const DesignSystem = ({ fonts = [], colors = [], spacing = [] }) => {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={fadeInUp}
-      className="py-20 max-w-[1200px] mx-auto px-5"
+      className="py-20 max-w-[1200px] mx-auto md:px-5 p-3"
     >
       <motion.div variants={item} className="text-center mb-16">
         <h2 className="font-roman text-4xl mb-3">Design System</h2>

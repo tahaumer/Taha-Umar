@@ -1,5 +1,5 @@
 import { motion, useIsPresent, useScroll, useTransform } from 'framer-motion'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import '../App.css'
 import Button from '../component/Button'
@@ -7,7 +7,7 @@ import Footer from '../component/Footer'
 import { useCursor } from '../context/CursorContext'
 import projectList from '../data/projects'
 import DesignSystem from '../component/DesignSystem'
-import zoaImg from '../assets/images/zoa.jpg'
+import { ArrowUpFromDotIcon } from 'lucide-react'
 
 const CaseStudy = () => {
     useEffect(() => { window.scrollTo(0, 0) }, [])
@@ -43,7 +43,7 @@ const CaseStudy = () => {
 
     return (
         <div ref={containerRef} className={`relative overflow-hidden ${project.bgColor || 'bg-neutral1'}`}>
-            <div className='fixed left-0 h-screen pt-20 z-40'>
+            <div className='fixed left-0 h-screen pt-20 z-40 md:block hidden'>
                 <motion.div
                     initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ duration: 1 }}
                     className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-black font-roman py-5 font-semibold"
@@ -61,27 +61,27 @@ const CaseStudy = () => {
             {/* Hero Section */}
             <motion.section style={{ y: textParallax }} className={`${project.bgColor || 'bg-neutral1'} z-5 z-[1] relative container header pt-[25svh] md:pt-[35svh] pb-12 sm:pb-14`}>
                 <div className="grid-cols-12">
-                    <div className="col-span-full ml-16 sm:col-span-8">
+                    <div className="col-span-full md:ml-16 sm:col-span-8">
                         <p className="mb-2 client">{project.subTitle}</p>
-                        <h1 className="text-3xl md:text-4xl font-roman mb-0">{project.title}</h1>
+                        <h1 className="text-2xl md:text-4xl font-roman mb-0">{project.title}</h1>
                     </div>
                 </div>
             </motion.section>
 
             {/* Parallax Image */}
-            <div className='relative h-[50svh] sm:h-[100svh] overflow-hidden z-0'>
+            <div className='relative h-[70svh] sm:h-[100svh] overflow-hidden z-0'>
                 <motion.img
                     style={{ y: imageParallax }}
-                    className='absolute top-0 left-0 w-full h-full object-cover object-center'
+                    className='absolute top-0 left-0 w-full md:h-full h-[60%] object-cover object-center'
                     src={project.img}
                     alt={project.title}
                 />
             </div>
 
             {/* Details Section */}
-            <motion.section style={{ y: sectionParallax }} className={`z-5 ${project.bgColor || 'bg-neutral1'} z-[1] relative -mt-40`}>
-                <div className="grid grid-cols-8 pb-[10svh] md:py-[15svh] max-w-[1000px] mx-auto pt-10">
-                    <div className='grid grid-cols-2 col-span-4 gap-3'>
+            <motion.section style={{ y: sectionParallax }} className={`z-5 ${project.bgColor || 'bg-neutral1'} z-[1] relative -mt-60 md:-mt-40`}>
+                <div className="grid md:grid-cols-8 pb-[10svh] md:py-[15svh] max-w-[1000px] mx-auto pt-10 px-3">
+                    <div className='grid md:grid-cols-2 col-span-4 md:gap-3 gap-8'>
                         <div className='text-2xl'>
                             <h3 className='font-semibold font-firaCode'>Services ——</h3>
                             <ul className='opacity-50 tracking-tighter text-xl'>
@@ -96,10 +96,10 @@ const CaseStudy = () => {
                         </div>
                     </div>
                     <div></div>
-                    <div className='col-span-3 text-xl font-openSans'>
+                    <div className='md:col-span-3 md:text-xl font-openSans mt-8 md:mt-0'>
                         <p>{project.description}</p>
                         {project.website && (
-                            <div className='w-fit mt-5'>
+                            <div className='md:w-fit  mt-5'>
                                 <Button text='Live Website' redirectUrl={project.website} />
                             </div>
                         )}
@@ -108,26 +108,29 @@ const CaseStudy = () => {
             </motion.section>
 
             {/* Grid Images */}
-            <div ref={gridImgRef} className='relative p-20 grid grid-cols-8 gap-5 z-[2] h-[80svh]'>
+            <div ref={gridImgRef} className='relative md:p-20 p-3 md:grid grid-cols-8 md:gap-5 gap-3 z-[2] md:h-[80svh] mt-20 md:mt-0'>
                 <motion.div style={{ y: gridImageUp }} className='col-span-5 rounded-2xl overflow-hidden w-full h-full'>
                     <img src={project.img2} alt={project.title} className='w-full h-full object-cover object-center' />
                 </motion.div>
-                <motion.div style={{ y: gridImageDown }} className='col-span-3 rounded-2xl overflow-hidden w-full h-1/2'>
+                <motion.div style={{ y: gridImageDown }} className='col-span-3 rounded-2xl overflow-hidden w-full md:h-1/2'>
                     <img src={project.img3} alt="" className='w-full h-full object-cover object-center' />
                 </motion.div>
             </div>
+
+
             <DesignSystem
                 fonts={project.fonts || []}
                 colors={project.colors || []}
             // spacing={[8, 16, 24, 32]}
             />
 
-            <div className='font-openSans text-2xl max-w-[500px] mx-auto border-l-2 border-black pl-4 text-pretty mb-20'>
+            <div className='font-openSans md:text-2xl text-base mx-3 max-w-[500px] md:mx-auto border-l-2 border-black pl-4 text-pretty mb-20'>
                 <p>"{project.descriptionShort}"</p>
             </div>
 
             {/* Next Case */}
-            <Link to={nextProject.subTitle ? `/case-study/${nextProject.link}` : `/case-study/${nextProject.link}/comming-soon`} ref={nextCaseRef} className='max-w-[1300px] cursor-none h-[400px] group flex items-center relative mx-auto border-t border-black mt-10'
+            <Link to={nextProject.subTitle ? `/case-study/${nextProject.link}` : `/case-study/${nextProject.link}/comming-soon`} ref={nextCaseRef}
+                className='max-w-[1300px] cursor-none h-[400px] px-3 md:px-0 group flex md:flex-row flex-col md:items-center relative mx-auto border-t border-black mt-10'
                 onMouseEnter={() => {
                     setCursorText("View")
                     setCursorVariant("project")
@@ -137,11 +140,15 @@ const CaseStudy = () => {
                     setCursorVariant("default")
                 }}
             >
-                <p className='font-semibold font-firaCode absolute top-0 left-0 text-xl'>Next Case Study</p>
-                <h3 className='text-7xl font-roman font-semibold'>{nextProject.title.split(' - ')[0]}</h3>
-                <motion.div className='w-[400px] h-[280px] absolute top-[-30px] right-7' style={{ x: nextCaseParallax, y: nextCaseParallax }}>
+                <p className='font-semibold font-firaCode md:absolute p-2 pl-0 top-0 left-0 md:text-xl'>Next Case Study</p>
+                <p className='font-semibold font-firaCode md:hidden absolute top-3 right-3 md:text-xl'>
+                    <ArrowUpFromDotIcon className='rotate-45'/>
+                </p>
+                <h3 className='md:text-7xl text-3xl font-roman font-semibold mt-10'>{nextProject.title.split(' - ')[0]}</h3>
+                <motion.div className='w-[400px] h-[280px] absolute top-[-30px] right-7 md:block hidden' style={{ x: nextCaseParallax, y: nextCaseParallax }}>
                     <img src={nextProject.img} alt='Next Project Preview' />
                 </motion.div>
+                <img src={nextProject.img} alt='Next Project Preview' className='md:hidden block' />
             </Link>
 
             {/* Page Exit Animation */}

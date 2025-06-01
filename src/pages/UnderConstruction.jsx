@@ -4,6 +4,7 @@ import { Construction, ExternalLink } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { useCursor } from '../context/CursorContext';
 import projectList from '../data/projects'
+import Footer from '../component/Footer';
 
 const UnderConstruction = ({ expectedDate = 'Coming Soon' }) => {
     const containerVariants = {
@@ -16,8 +17,8 @@ const UnderConstruction = ({ expectedDate = 'Coming Soon' }) => {
             }
         }
     };
-    const { setCursorVariant, setCursorText } = useCursor()
     const isPresent = useIsPresent()
+    const { setCursorVariant, setCursorText } = useCursor()
 
     const { name } = useParams()
     const project = projectList.find(p => p.link === name)
@@ -43,9 +44,10 @@ const UnderConstruction = ({ expectedDate = 'Coming Soon' }) => {
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
-                className="min-h-screen bg-neutral1 flex items-center justify-center px-4"
+                className="min-h-screen bg-neutral1 flex flex-col items-center md:px-4"
             >
-                <div className='fixed left-0 h-screen pt-20 z-40'>
+                <Footer color='black' />
+                <div className='fixed left-0 h-screen md:block hidden pt-20 z-40'>
                     <motion.div
                         initial="hidden" whileInView="visible" variants={fadeInFromLeft} transition={{ duration: 1 }}
                         className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-black font-roman py-5 font-semibold"
@@ -55,11 +57,11 @@ const UnderConstruction = ({ expectedDate = 'Coming Soon' }) => {
                         <p className="w-fit -rotate-90 -ml-5 whitespace-nowrap">© TAHA | 2025</p>
                     </motion.div>
                 </div>
-                <div className="max-w-2xl w-full">
+                <div className="max-w-2xl w-full my-auto px-3">
                     <motion.div variants={itemVariants} className="text-center mb-12">
                         <Construction className="w-16 h-16 mx-auto mb-6 text-accent" />
-                        <h1 className="text-4xl md:text-5xl font-roman mb-4">{project.title}</h1>
-                        <p className="text-xl font-openSans text-gray-600">This case study is currently under construction.</p>
+                        <h1 className="text-3xl md:text-5xl font-roman mb-4">{project.title}</h1>
+                        <p className="md:text-xl font-openSans text-gray-600">This case study is currently under construction.</p>
                         <p className="text-lg font-firaCode mt-2 text-accent">{expectedDate}</p>
                     </motion.div>
 
@@ -78,21 +80,21 @@ const UnderConstruction = ({ expectedDate = 'Coming Soon' }) => {
                     )}
 
                     <motion.div variants={itemVariants} className="mt-16 pt-8 border-t border-gray-200">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                             <div className="text-center">
                                 <h3 className="font-firaCode text-lg mb-2">Design</h3>
-                                <div className="h-1 w-24 mx-auto bg-accent rounded" />
-                                <p className="mt-2 text-gray-600">In Progress</p>
+                                <div className="h-1 w-24 mx-auto bg-neutral2 rounded" />
+                                <p className="mt-2 text-gray-600">Completed</p>
                             </div>
                             <div className="text-center">
                                 <h3 className="font-firaCode text-lg mb-2">Development</h3>
                                 <div className="h-1 w-24 mx-auto bg-neutral2 rounded" />
-                                <p className="mt-2 text-gray-600">Pending</p>
+                                <p className="mt-2 text-gray-600">Completed</p>
                             </div>
-                            <div className="text-center">
+                            <div className="text-center col-span-2 md:col-span-1">
                                 <h3 className="font-firaCode text-lg mb-2">Launch</h3>
                                 <div className="h-1 w-24 mx-auto bg-neutral2 rounded" />
-                                <p className="mt-2 text-gray-600">Pending</p>
+                                <p className="mt-2 text-gray-600">In Progress</p>
                             </div>
                         </div>
                     </motion.div>

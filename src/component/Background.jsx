@@ -116,14 +116,14 @@ const Particles = ({ numberOfParticles='10' }) => {
 
   return (
     <motion.div
-      className="absolute inset-0 overflow-hidden pointer-events-none z-0 w-full h-full"
+      className="absolute inset-0 overflow-hidden pointer-events-none z-[-1] w-full h-full"
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0, transition: { delay: 1, duration: 1 } }} // Smooth fade-in after 1 second
     >
       {particles.map((particle, index) => (
         <div
           key={index}
-          className="absolute"
+          className="absolute opacity-50"
           style={{
             top: particle.y, // Initial random vertical position
             left: particle.x, // Initial random horizontal position

@@ -23,33 +23,33 @@ const Contact = () => {
     const isPresent = useIsPresent();
     const [xOffset, setXOffset] = useState(getXOffset());
     const [xOffsetDelay, setXOffsetDelay] = useState(getXOffsetDelay());
-  
+
     useEffect(() => {
-      window.scrollTo(0, 0);
-  
-      const handleResize = () => {
-        setXOffset(getXOffset());
-        setXOffsetDelay(getXOffsetDelay());
-      };
-  
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
+        window.scrollTo(0, 0);
+
+        const handleResize = () => {
+            setXOffset(getXOffset());
+            setXOffsetDelay(getXOffsetDelay());
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
-  
+
     function getXOffset() {
-      return window.innerWidth < 700 ? -10 : -100;
+        return window.innerWidth < 700 ? -10 : -100;
     }
-  
+
     function getXOffsetDelay() {
-      return window.innerWidth < 700 ? 1 : 1.5;
+        return window.innerWidth < 700 ? 1 : 1.5;
     }
-  
+
     const fadeInFromLeft = {
-      hidden: { opacity: 0, x: xOffset },
-      visible: { opacity: 1, x: 0 },
-    };  
+        hidden: { opacity: 0, x: xOffset },
+        visible: { opacity: 1, x: 0 },
+    };
 
     const [formValues, setFormValues] = useState({
         username: '',
@@ -88,36 +88,37 @@ const Contact = () => {
 
     return (
         <>
-            <div className='container pl-10'>
-            <BackgroundShapes2 numberOfParticles='20' />
-                <div className='fixed left-0 h-screen py-20'>
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        variants={fadeInFromLeft}
-                        transition={{ delay: xOffsetDelay, duration: 1 }}
-                        className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
-                    >
-                        <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
-                        <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
-                        <p className="w-fit -rotate-90 md:-ml-5 -ml-7 whitespace-nowrap">© TAHA | 2025</p>
-                    </motion.div>
-                </div>
-                <div className='flex py-10 xl:p-20 pb-0 space-x-10'>
+            <div className='fixed left-0 h-screen py-20'>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={fadeInFromLeft}
+                    transition={{ delay: xOffsetDelay, duration: 1 }}
+                    className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
+                >
+                    <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
+                    <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
+                    <p className="w-fit -rotate-90 md:-ml-5 -ml-4 whitespace-nowrap">© TAHA | 2025</p>
+                </motion.div>
+            </div>
+            <div className='container'>
+                <Footer />
+                <BackgroundShapes2 numberOfParticles='10' />
+                <div className='flex py-10 xl:p-20 pb-0 space-x-10 pl-7'>
                     <div className='xl:w-[80%] z-10 relative'>
-                        <AnimatedHeader 
+                        <AnimatedHeader
                             title="Contact"
-                            initialY={200} 
-                            spanWidths={[400, 300]} 
-                            delay={0.5} 
+                            initialY={200}
+                            spanWidths={[400, 300]}
+                            delay={0.5}
                         />
-                        <div className='bg-primary relative z-10 pr-10'>
-                            <div className="text-white">
+                        <div className='bg-primary relative z-10 md:pr-10 w-full'>
+                            <div className="text-white w-full">
                                 <p className='my-8 text-white font-openSans font-thin'>
                                     I enjoy working with dedicated creatives from businesses that make the world beautiful. Together, we can inspire change and bring innovative ideas to life.
                                     We can accomplish so much together. Let’s talk!
                                 </p>
-                                <form onSubmit={handleSubmit} className="border-dashed relative border-gray-400 border sm:p-10 p-5">
+                                <form onSubmit={handleSubmit} className="border-dashed relative border-gray-400 border sm:p-10 p-5 w-full">
                                     <div className='absolute left-0 right-0 top-0 bottom-0 w-full h-full blur-sm brightness-[0.3]'
                                         style={{
                                             backgroundImage: `url(${bgImage})`,
@@ -125,9 +126,9 @@ const Contact = () => {
                                             backgroundSize: 'auto'
                                         }}>
                                     </div>
-                                    <div className='w-fit space-y-10'>
-                                        <div className='flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-20'>
-                                            <div className='relative md:w-[250px]'>
+                                    <div className='md:w-fit space-y-10'>
+                                        <div className='flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-20 w-full'>
+                                            <div className='relative md:w-[250px] w-full'>
                                                 <input
                                                     id="username"
                                                     name="username"
@@ -200,14 +201,14 @@ const Contact = () => {
                                 </form>
                             </div>
                             <p className='text-white text-2xl font-roman pl-3 mt-5 mb-3'>OR</p>
-                            <a href='mailto:tahaumer21@gmail.com' className='flex items-center w-fit space-x-3 text-white font-roman md:text-3xl text-xl font-thin'> <img src={phone} alt="" /> <span> tahaumer21@gmail.com</span></a>
+                            <a href='mailto:dev.tahaumar@gmail.com' className='flex items-center w-fit space-x-3 text-white font-roman md:text-3xl text-xl font-thin'> <img src={phone} alt="" /> <span> dev.tahaumar@gmail.com</span></a>
                         </div>
                     </div>
                     <motion.div viewport={{ once: true }} initial="hidden" whileInView="visible" variants={fadeInFromRight} className='w-[384px] h-[482px] hidden xl:block'>
                         <img src={contactImg} alt="" className='object-contain object-center' />
                     </motion.div>
                 </div>
-            <Footer/>
+
             </div>
             <motion.div
                 initial={{ scaleX: 1 }}

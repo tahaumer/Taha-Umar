@@ -7,7 +7,6 @@ import Button from '../component/Button';
 import myImage from '../assets/images/taha.png'
 import AnimatedHeader from '../component/AnimatedHeader';
 import Footer from '../component/Footer';
-import BackgroundShapes2 from '../component/background2'
 
 const fadeInFromRight = {
   hidden: { opacity: 0, x: 30 },
@@ -52,31 +51,32 @@ const About = () => {
   };
   return (
     <>
-      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1224px] xl:max-w-[1380px] 2xl:max-w-[1536px] md:pl-20 pl-14 mx-auto">
+      <div className='fixed left-0 h-screen pt-20 z-40'>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromLeft}
+          transition={{ delay: xOffsetDelay, duration: 1 }}
+          className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
+        >
+          <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
+          <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
+          <p className="w-fit -rotate-90 -ml-5 whitespace-nowrap">© TAHA | 2025</p>
+        </motion.div>
+      </div>
+      <div className="w-full max-w-full sm:max-w-[640px] md:max-w-[768px] lg:max-w-[1224px] xl:max-w-[1380px] 2xl:max-w-[1536px] mx-auto">
+      <Footer />
 
-        <div className='fixed left-0 h-screen pt-20'>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeInFromLeft}
-            transition={{ delay: xOffsetDelay, duration: 1 }}
-            className="flex w-[61px] -ml-4 sm:ml-0 lg:w-auto flex-col justify-between h-[500px] text-white font-roman py-5 font-semibold"
-          >
-            <Link to="/" className="w-fit -rotate-90 pt-8">Home</Link>
-            <span className="w-[200px] -ml-16 h-[0.5px] bg-neutral1 block -rotate-90"></span>
-            <p className="w-fit -rotate-90 -ml-5 whitespace-nowrap">© TAHA | 2025</p>
-          </motion.div>
-        </div>
         <div className='flex py-10 xl:p-20 pb-0 space-x-10 relative'>
-          <BackgroundShapes2 numberOfParticles='20' />
-          <div className='lg:w-[60%] z-10 relative'>
+          {/* <BackgroundShapes2 numberOfParticles='20' /> */}
+          <div className='lg:w-[60%] z-10 relative md:pl-20 pl-10'>
             <AnimatedHeader
               title="About"
               initialY={200}
               spanWidths={[400, 300]}
               delay={0.5}
             />
-            <div className='bg-primary relative pr-3 z-10'>
+            <div className='bg-primary relative pr-3 z-10 pb-5'>
               <div className="text-white xl:text-[50px] sm:text-[30px] text-lg font-roman leading-none">
                 <TypeAnimation
                   sequence={[
@@ -116,7 +116,7 @@ const About = () => {
             <img src={myImage} alt="" className='object-contain object-center' />
           </motion.div>
         </div>
-        <Footer />
+
       </div>
       <motion.div
         initial={{ scaleX: 1 }}

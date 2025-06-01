@@ -25,7 +25,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full flex justify-center items-center"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full md:flex hidden justify-center items-center"
       animate={cursorVariant}
       variants={variants}
     >
